@@ -29,8 +29,10 @@ body {
     font-size: 48px;
 }
 
-
-.header div {
+/* changed from div to nav, a more specified HTML5 semantic element that 
+    tells the search engine this is a navigation bar of clickable links. 
+    this is good practice for seo. */
+.header nav {
     padding-top: 15px;
     margin-right: 20px;
     float: right;
@@ -39,12 +41,12 @@ body {
 }
 
 /* we want the buttons to be displayed similarly to a list but do not want to include any bullet points. */
-.header div ul {
+.header nav ul {
     list-style-type: none;
 }
 
 /* exactly what we did for ".header h1". now we have two blocks of content beside eachother only as wide as the content they contain. */
-.header div ul li {
+.header nav ul li {
     display: inline-block;
     margin-left: 25px;
 }
@@ -151,4 +153,9 @@ a {
 
 .footer h2 {
     font-size: 20px;
+}
+
+/* a work around to ensure the heart at the bottom our page is red. */
+.heart-emoji {
+    font-weight: 100;
 }
