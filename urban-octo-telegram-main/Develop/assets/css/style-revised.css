@@ -5,13 +5,15 @@
 }
 
 body {
-    background-color: #d9dcd6;
+    background-color: rgb(217, 220, 214);
 }
 
+/* SEO is accented on our company logo */
 .seo {
     color: #d9dcd6;
 }
 
+/* styling and formatting for the header */
 .header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -19,6 +21,9 @@ body {
     color: rgb(255, 255, 255);
 }
 
+/* we use inline-block to allow the horiseon logo and reference buttons to be displayed beside each other.
+    a normal block display will populate the entire page horizontally but an inline-block display only takes 
+    as much space as the content inside it.  */
 .header h1 {
     display: inline-block;
     font-size: 48px;
@@ -33,20 +38,25 @@ body {
     font-size: 20px;
 }
 
+/* we want the buttons to be displayed similarly to a list but do not want to include any bullet points. */
 .header div ul {
     list-style-type: none;
 }
 
+/* exactly what we did for ".header h1". now we have two blocks of content beside eachother only as wide as the content they contain. */
 .header div ul li {
     display: inline-block;
     margin-left: 25px;
 }
 
+/* we want the buttons to retain the formatting consistent with the theme of the rest of the page.
+    this is to prevent the links being automatically made blue and underlined. */
 a {
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
+/* the hero section, all done in css which we are okay with. */
 .hero {
     height: 800px;
     width: 100%;
@@ -56,16 +66,19 @@ a {
     background-position: center;
 }
 
+/* used to stagger the order of image and content between items in the content section. */
 .float-left {
     float: left;
     margin-right: 25px;
 }
-
+/* see line 69 */
 .float-right {
     float: right;
     margin-left: 25px;
 }
 
+/* this section consists of three blocks contained in in a block as specified by line 84.
+    this section is displayed as an inline-block so that the benefits section can be displayed next to it. */
 .content-section {
     width: 75%;
     display: inline-block;
@@ -77,37 +90,7 @@ a {
     font-size: 36px;
 }
 
-.content-img {
-    max-height: 200px;
-}
-
-.benefits-section {
-    margin-right: 20px;
-    padding: 20px;
-    clear: both;
-    float: right;
-    width: 20%;
-    height: 100%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #2589bd;
-}
-
-.benefit {
-    margin-bottom: 32px;
-    color: #ffffff;
-}
-
-.benefit h3 {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.benefit img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-}
-
+/* consolidated repetitive styling by creating one class to apply to each item under the content section. */
 .what-we-do {
     margin-bottom: 20px;
     padding: 50px;
@@ -117,6 +100,48 @@ a {
     color: #ffffff;
 }
 
+/* this class specifies that as the application adapts to different screen sizes, 
+    the images cannot exceed a height of 200 pixels. */
+.content-img {
+    max-height: 200px;
+}
+
+/* this class is used to style the benefits section and it is set to float to the right of the page. */
+.benefits-section {
+    margin-right: 20px;
+    padding: 20px;
+    clear: both;
+    float: right;
+    width: 20%;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(37, 137, 189);
+}
+
+/* this class allows us to format each individual benefit */
+.benefit {
+    margin-bottom: 32px;
+    color: rgb(255, 255, 255);
+}
+
+/* we modify the h3 and img any time the parent element uses the 'benefit' class.
+    any time the 'benefit' class is used this is what will happen when we add h3. */
+.benefit h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* see line 117. since the images in this section posess no functionality beyond visual aesthetic 
+    we do not add an alt attribute. the page will still make sense if they do not appear. 
+    this is not the case with the images under the content section. */
+.benefit img {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+}
+
+/* the final styling on the footer is simple and consistent with the theme of the rest of the application.
+    we use '&copy;' to indicate the page is copyrighted by Horiseon. */
 .footer {
     padding: 30px;
     clear: both;
